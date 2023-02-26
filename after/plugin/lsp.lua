@@ -5,9 +5,8 @@ local lsp = require('lsp-zero').preset({
   suggest_lsp_servers = false,
 })
 
-lsp.setup_servers({'tsserver', 'eslint'})
-
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
 lsp.setup()
+require('lspconfig').clangd.setup {}

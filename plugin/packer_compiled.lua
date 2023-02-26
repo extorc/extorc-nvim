@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/extorc/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/extorc/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/extorc/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -105,11 +110,9 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\2â\1\0\0\4\0\a\0\r6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0004\2\3\0005\3\3\0>\3\1\2=\2\5\0014\2\0\0=\2\6\1B\0\2\1K\0\1\0\vfooter\vcenter\1\0\0\1\0\a\fdesc_hl\ngroup\bkey3shortcut key in dashboard buffer not keymap !!\vaction\5\vkey_hl\ngroup\ficon_hl\ngroup\ticon\5\tdesc\16description\nsetup\14dashboard\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/extorc/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
+    config = { "\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dashboard\frequire\0" },
+    loaded = true,
+    path = "/home/extorc/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
   edge = {
@@ -152,6 +155,11 @@ _G.packer_plugins = {
     path = "/home/extorc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-hardline"] = {
+    loaded = true,
+    path = "/home/extorc/.local/share/nvim/site/pack/packer/start/nvim-hardline",
+    url = "https://github.com/ojroques/nvim-hardline"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/extorc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -191,17 +199,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/extorc/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vgit.nvim"] = {
+    loaded = true,
+    path = "/home/extorc/.local/share/nvim/site/pack/packer/start/vgit.nvim",
+    url = "https://github.com/tanvirtin/vgit.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/extorc/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: dashboard-nvim
+time([[Config for dashboard-nvim]], true)
+try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dashboard\frequire\0", "config", "dashboard-nvim")
+time([[Config for dashboard-nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

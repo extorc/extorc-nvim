@@ -50,23 +50,19 @@ return require('packer').startup(function(use)
 
 	use {
 		'glepnir/dashboard-nvim',
-		event = 'VimEnter',
+		theme = 'doom',
 		config = function()
-			require('dashboard').setup {
-				center = {
-					{
-						icon = '',
-						icon_hl = 'group',
-						desc = 'description',
-						desc_hl = 'group',
-						key = 'shortcut key in dashboard buffer not keymap !!',
-						key_hl = 'group',
-						action = '',
-					},
-				},
-				footer = {},
-			}
+			require('dashboard').setup()
 		end,
 		requires = {'nvim-tree/nvim-web-devicons'}
+	}
+	use {'ojroques/nvim-hardline'}
+	use 'tpope/vim-fugitive'
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+	use {
+		'tanvirtin/vgit.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		}
 	}
 end)
