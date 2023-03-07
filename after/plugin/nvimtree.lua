@@ -14,7 +14,7 @@ require("nvim-tree").setup()
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    width = 45,
+    width = 40,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
